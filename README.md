@@ -18,15 +18,13 @@
 1. 🤖 [Introduction](#introduction)
 2. ⚙️ [Tech Stack](#tech-stack)
 3. 🔋 [Features](#features)
-4. 🏗️ [Architecture Overview](#architecture-overview)
-5. 🚀 [Installation & Setup](#installation-&-setup)
-6. 🖼️ [Screenshots](#screenshots)
-7. 🌍 [Demo Link](#demo-link)
-8. 🤝 [Contributing](#contributing)
-9. 📄 [License](#license)
+4. 🚀 [Installation & Setup](#installation-&-setup)
+5. 🖼️ [Screenshots](#screenshots)
+6. 🌍 [Demo Link](#demo-link)
+7. 🤝 [Contributing](#contributing)
 
 ---
-## 🤖 Introduction
+## <a name="introduction">🤖 Introduction</a>
 
 **Mobile Movie App** is a fully functional, cross-platform movie discovery app built with **Expo**, **React Native**, and **TypeScript**.  
 It integrates **Appwrite** for secure authentication, user data management, and real-time database operations.
@@ -38,7 +36,7 @@ It’s powered by a **custom popularity algorithm** that ranks movies based on u
 Authentication is handled through **Google OAuth2**, offering a seamless and secure login flow. With features like favorites, collections, watchlist, and live notifications, this app demonstrates both strong UI/UX principles and production-ready scalability.
 
 ---
-## ⚙️ Tech Stack
+## <a name="tech-stack">⚙️ Tech Stack</a>
 
 - **[Expo](https://expo.dev/)** – The all-in-one platform for developing and deploying cross-platform React Native apps, featuring fast refresh, OTA updates, and file-based routing via Expo Router.
 
@@ -52,7 +50,7 @@ Authentication is handled through **Google OAuth2**, offering a seamless and sec
 
 ---
 
-## 🔋 Features
+## <a name="feautures">🔋 Features</a>
 ### 🌟 Core Features
 - 🎥 **Dynamic Movie Feed** – Fetches and displays real-time movie data.
 - 🔍 **Search Functionality** – Instantly search and discover movies by name or keyword.
@@ -72,10 +70,13 @@ Authentication is handled through **Google OAuth2**, offering a seamless and sec
 
 ---
 
-## 🚀 Installation & Setup
-- Prerequisites
-- Node.js ≥ 16
-- Expo CLI installed (npm install -g expo-cli)
+## <a name="installation-&-setup">🚀 Installation & Setup</a>
+- Prerequisites:
+  Make sure you have the following installed on your machine:
+
+- **[Git](https://git-scm.com/)**
+- **[Node.js](https://nodejs.org/en)**
+- **[npm](https://www.npmjs.com/)** _(Node Package Manager)_
 - Appwrite account and project configured
 
 ### 🚀 Getting Started
@@ -93,7 +94,7 @@ npx expo start
 
 --- 
 
-## 🖼️ Screenshots
+## <a name="screenshots">🖼️ Screenshots</a>
 - Home Screen
 - Search Results
 - Movie Details
@@ -104,12 +105,12 @@ npx expo start
 
 ---
 
-## 🌍 Demo Link
+## <a name="demo-link">🌍 Demo Link</a>
 🔗 Live Demo: Coming Soon
 
 ---
 
-## 🤝 Contributing
+## <a name="contributing">🤝 Contributing</a>
 Contributions are welcome!
 Fork this repository, make your improvements, and open a pull request.
 
