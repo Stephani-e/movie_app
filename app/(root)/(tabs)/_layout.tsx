@@ -1,41 +1,56 @@
 import {useEffect, useState} from "react";
 import {Tabs} from "expo-router";
-import {Image, Text, View} from "react-native";
+import {Image, ImageSourcePropType, Text, View} from "react-native";
 import {BlurView} from "expo-blur";
 import {useGlobalContext} from "@/lib/global-provider";
 import {getNotifications} from "@/services/notifications";
 import {client} from "@/lib/appwrite";
 import {RealtimeResponseEvent} from "react-native-appwrite";
 import {icons} from "@/constants/icons";
+import cn from "clsx";
 
 const DATABASE_ID = process.env.EXPO_PUBLIC_APPWRITE_DATABASE_ID!;
 const NOTIFICATIONS_COLLECTION_ID = process.env.EXPO_PUBLIC_APPWRITE_NOTIFICATION_COLLECTION_ID!;
 
-function TabIcon({ focused, icon, title, badge = 0 }: any) {
-    return (
-        <View className="items-center justify-center relative">
-            {focused ? (
-                <View className="flex-row items-center px-3 py-2 rounded-full bg-white/20 ">
-                    <Image source={icon} className="w-5 h-5" tintColor="#fff" />
-                    {badge > 0 && (
-                        <View className="ml-2 bg-red-500 rounded-full min-w-[16px] px-1.5 py-0.5 items-center justify-center">
-                            <Text className="text-white text-[10px] font-bold">{badge}</Text>
-                        </View>
+interface TabBarIconProps {
+    focused: boolean;
+    icon: ImageSourcePropType;
+    title: string;
+    badge?: number;
+}
+
+const TabBarIcon = ({ focused, icon, title, badge = 0 }: TabBarIconProps) => (
+    <View className="flex min-w-20 items-center justify-center min-h-full gap-1 mt-5">
+        {/* Icon and label */}
+        <View className="relative items-center justify-center">
+            <Image
+                source={icon}
+                className="size-5"
+                resizeMode="contain"
+                tintColor={focused ? "#FFFFFF" : "#5D5F6D"}
+            />
+            {badge > 0 && (
+                <View
+                    className={cn(
+                        "absolute -top-2 -right-2 bg-red-500 rounded-full min-w-[14px] px-[4px] py-[1px] items-center justify-center",
+                        focused && "bg-red-600"
                     )}
+                >
+                    <Text className="text-white text-[9px] font-bold">{badge}</Text>
                 </View>
-            ) : (
-                <>
-                    <Image source={icon} className="w-5 h-5" tintColor="#bbb" />
-                    {badge > 0 && (
-                        <View className="absolute -top-1 -right-3 bg-red-500 rounded-full min-w-[16px] px-1.5 py-0.5 items-center justify-center">
-                            <Text className="text-white text-[10px] font-bold">{badge}</Text>
-                        </View>
-                    )}
-                </>
             )}
         </View>
-    );
-}
+
+        <Text
+            className={cn(
+                "text-xs mt-1 font-semibold",
+                focused ? "text-white" : "text-white/80"
+            )}
+        >
+            {title}
+        </Text>
+    </View>
+)
 
 export default function TabsLayout() {
     const { user } = useGlobalContext();
@@ -82,33 +97,31 @@ export default function TabsLayout() {
                     headerShown: false,
                     tabBarShowLabel: false,
                     tabBarStyle: {
-                        position: "absolute",
-                        bottom: 10,
-                        left: 20,
-                        right: 20,
-                        height: 64,
-                        borderRadius: 32,
-                        backgroundColor: "transparent",
-                        elevation: 0,
-                    },
-                    tabBarBackground: () => (
-                        <BlurView
-                            intensity={50}
-                            tint="dark"
-                            style={{
-                                flex: 1,
-                                borderRadius: 32,
-                                overflow: "hidden",
-                            }}
-                        />
-                    ),
+                        borderTopLeftRadius: 50,
+                        borderTopRightRadius: 50,
+                        borderBottomLeftRadius: 50,
+                        borderBottomRightRadius: 50,
+                        marginHorizontal: 20,
+                        height: 50,
+                        position: 'absolute',
+                        bottom: 40,
+                        backgroundColor: 'transparent',
+                        shadowColor: '#1a1a1a',
+                        shadowOffset: {
+                            width: 0,
+                            height: 10,
+                        },
+                        shadowOpacity: 0.1,
+                        shadowRadius: 4,
+                        elevation: 5,
+                    }
                 }}
             >
                 <Tabs.Screen
                     name="index"
                     options={{
                         tabBarIcon: ({ focused }) => (
-                            <TabIcon focused={focused} icon={icons.home} title="Home" />
+                            <TabBarIcon focused={focused} icon={icons.home} title='Home' />
                         ),
                     }}
                 />
@@ -116,7 +129,7 @@ export default function TabsLayout() {
                     name="search"
                     options={{
                         tabBarIcon: ({ focused }) => (
-                            <TabIcon focused={focused} icon={icons.search} title="Search" />
+                            <TabBarIcon focused={focused} icon={icons.search} title='Search' />
                         ),
                     }}
                 />
@@ -124,7 +137,7 @@ export default function TabsLayout() {
                     name="saved"
                     options={{
                         tabBarIcon: ({ focused }) => (
-                            <TabIcon focused={focused} icon={icons.save} title="Save" />
+                            <TabBarIcon focused={focused} icon={icons.save} title='Save' />
                         ),
                     }}
                 />
@@ -132,11 +145,11 @@ export default function TabsLayout() {
                     name="profile"
                     options={{
                         tabBarIcon: ({ focused }) => (
-                            <TabIcon
+                            <TabBarIcon
                                 focused={focused}
                                 icon={icons.person}
-                                title="Profile"
                                 badge={unreadCount}
+                                title='Profile'
                             />
                         ),
                     }}
