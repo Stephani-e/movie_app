@@ -10,7 +10,7 @@ import {addHistoryEntry} from "@/services/history";
 import {images} from "@/constants/images";
 import MovieCard from "@/components/MovieCard";
 import {icons} from "@/constants/icons";
-import {updateSearchCount} from "@/services/appwrite";
+import {updateSearchCount, type SearchMovie} from "@/services/appwrite";
 import {useNotify} from "@/hooks/useNotify";
 
 const Search = () => {
@@ -34,37 +34,51 @@ const Search = () => {
         [key: string]: any; // fallback if TMDB sends extra fields
     }
 
-    const handleSearch = async (query: string, movie: Movie) => {
-        if (!user) return;
+    const handleSearch = async () => {
+        console.log("Search Clicked with query:", searchQuery);
+
         if (!searchQuery.trim()) return;
 
         try {
-            await loadMovies();
-
-            //General Searches
-            if (movies && movies.length > 0) {
-                await updateSearchCount(searchQuery, movies[0]);
-            }
-
-            //History Tracking
-            await addHistoryEntry(user.$id, query, movie);
-            notify(
-                "Made a Search",               // toastMessage
-                `You searched for ${movie}`, // dbMessage
-                "search",
-                "success"
-            );
+            loadMovies(); // this will update the "movies" state automatically
         } catch (err) {
             console.error("Search failed:", err);
             notify(
-                "Error encountered while searching",               // toastMessage
-                `Error Searching for ${movie}`, // dbMessage
+                "Error encountered while searching",
+                `Error searching for ${searchQuery}`,
                 "search",
                 "error"
             );
         }
     };
 
+    const handleMovieSelect = async (movie: SearchMovie) => {
+        if (!user) return;
+        console.log("Movie Selected:", movie.title);
+
+        try {
+            // ✅ Update general search stats
+            await updateSearchCount(searchQuery, movie);
+            console.log("Movie Selected:", movie.title);
+            // ✅ Add to user history
+            await addHistoryEntry(user.$id, searchQuery, movie);
+
+            notify(
+                "Movie Selected",
+                `You searched for ${movie.title}`,
+                "search",
+                "success"
+            );
+        } catch (err) {
+            console.error("Error saving movie:", err);
+            notify(
+                "Failed to save movie",
+                `Error searching for ${movie.title}`,
+                "search",
+                "error"
+            );
+        }
+    };
 
     return (
         <View className='flex-1 bg-primary'>
@@ -76,8 +90,8 @@ const Search = () => {
 
             <FlatList
                 data={movies}
-                renderItem={({ item }) => <MovieCard {...item} /> }
-                keyExtractor={(item) => item.id.toString()}
+                renderItem={({ item }) => <MovieCard {...item} onPress={() => handleMovieSelect(item)} /> }
+                keyExtractor={(item, index) => item?.id?.toString() || index.toString()}
                 className='px-5'
                 numColumns={3}
                 columnWrapperStyle={{
@@ -107,7 +121,7 @@ const Search = () => {
 
                             {/* Search button */}
                             <TouchableOpacity
-                                onPress={() => handleSearch(searchQuery, movies?.[0])}
+                                onPress={handleSearch}
                                 className="px-4 py-2 bg-white rounded-r-lg"
                                 style={{
                                     borderLeftColor: "red",

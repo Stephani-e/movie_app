@@ -1,15 +1,22 @@
 import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {Link} from 'expo-router'
+import {Link, router} from 'expo-router'
 import {icons} from "@/constants/icons";
 
-const MovieCard = ({ id, poster_path, title, vote_average, release_date, original_language }: Movie) => {
+const MovieCard = ({ id, poster_path, title, vote_average, release_date, original_language, onPress }: Movie & { onPress?: () => void }) => {
 
     return (
             <Link
                 href={`/movies/${id}`}
                 asChild
             >
-                <TouchableOpacity className='w-[30%] mb-5 activeOpacity:{0.8}'>
+                <TouchableOpacity
+                    className='w-[30%] mb-5 activeOpacity:{0.8}'
+                    onPress={() => {
+                        if (onPress) onPress();
+
+                        router.push(`/movies/${id}`);
+                    }}
+                >
                     <View className='relative'>
                         <Image
                             source={{

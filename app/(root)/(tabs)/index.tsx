@@ -146,7 +146,9 @@ const Index = () => {
                                     renderItem={({ item, index }) => (
                                         <TrendingCard movie={item} index={index} />
                                     )}
-                                    keyExtractor={(item) => item.movie_id.toString()}
+                                    keyExtractor={(item, index) =>
+                                        `${item.movie_id || item || 'unknown'}-${index}-${Math.random().toString(36).substring(2, 9)}`
+                                    }
                                 />
                             </View>
                         )}
@@ -160,7 +162,7 @@ const Index = () => {
                                 <FlatList
                                     data={upcomingMovies}
                                     renderItem={({ item }) => <UpcomingCard movie={item} />}
-                                    keyExtractor={(item) => item.id.toString()}
+                                    keyExtractor={(item, index) => `upcoming-${item.id}-${index}`}
                                     scrollEnabled={false} // let parent FlatList handle scrolling
                                 />
                             </View>
@@ -177,7 +179,7 @@ const Index = () => {
                                     pagingEnabled
                                     data={nowPlayingMovies.results}
                                     renderItem={({ item }) => <NowPlayingCard movie={item} />}
-                                    keyExtractor={(item) => item.id.toString()}
+                                    keyExtractor={(item, index) => `now-playing-${item.id}-${index}`}
                                 />
                             </View>
                         )}
@@ -188,13 +190,26 @@ const Index = () => {
                                 <Text className="text-lg text-white font-bold mb-3">
                                     Popular Movies
                                 </Text>
-                                <PopularMoviesCarousel movies={popularMovies.results} />
+                                <PopularMoviesCarousel
+                                    movies={popularMovies.results.map((m, i) => ({
+                                        ...m,
+                                        key: `popular-${m.id}-${i}`
+                                    }))}
+                                />
                             </View>
                         )}
 
                         {/* ⭐ Top Rated */}
                         {topRatedMovies?.results && (
-                            <TopRatedSection topRatedMovies={topRatedMovies} />
+                            <TopRatedSection
+                                topRatedMovies={{
+                                    ...topRatedMovies,
+                                    results: topRatedMovies.results.map((m, i) => ({
+                                        ...m,
+                                        key: `top-rated-${m.id}-${i}`,
+                                    })),
+                                }}
+                            />
                         )}
 
                         {/* Latest */}
@@ -207,7 +222,7 @@ const Index = () => {
                                 <FlatList
                                     data={movies}
                                     renderItem={({ item }) => <MovieCard {...item} />}
-                                    keyExtractor={(item) => item.id.toString()}
+                                    keyExtractor={(item, index) => `latest-${item.id}-${index}`}
                                     numColumns={3}
                                     columnWrapperStyle={{
                                         justifyContent: "space-evenly",

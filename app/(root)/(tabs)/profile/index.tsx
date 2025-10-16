@@ -39,20 +39,8 @@ const Profile = () => {
         if (result) {
             Alert.alert("Logout Successful", "You are now logged out");
             refetch();
-            notify(
-                `Logout Successful`,               // toastMessage
-                `${user?.name} logged out successfully`, // dbMessage
-                "logout",
-                "success"
-            );
         } else {
             Alert.alert("Logout Failed", "Please try again later");
-            notify(
-                `Logout Failed`,               // toastMessage
-                `${user?.name} logged out failed`, // dbMessage
-                "logout",
-                "error"
-            );
         }
     }
     const confirmLogout = () => {
