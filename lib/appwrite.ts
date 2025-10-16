@@ -1,5 +1,6 @@
 import {Account, Avatars, Client, Databases, OAuthProvider} from "react-native-appwrite";
-import * as Linking from 'expo-linking';
+//import * as Linking from 'expo-linking';
+import * as AuthSession from "expo-auth-session";
 import {openAuthSessionAsync} from "expo-web-browser";
 
 export const config = {
@@ -24,7 +25,7 @@ export const databases = new Databases(client);
 
 export async function login() {
     try {
-        const redirectUri = Linking.createURL('/');
+        const redirectUri = AuthSession.makeRedirectUri({scheme: "movies"});
         console.log("👉 Redirect URI being used:", redirectUri);
 
         const response = await account.createOAuth2Token(
