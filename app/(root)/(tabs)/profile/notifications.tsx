@@ -126,7 +126,7 @@ const NotificationPage = () => {
                     data={notifications}
                     keyExtractor={(item) => item.$id}
                     renderItem={({ item }) => {
-                        //console.log("🧩 Notification item:", item);
+                        //console.log("Notification item:", item);
                         return (
                             <View
                                 className={`flex-row justify-between items-center px-4 py-3 rounded-lg mb-2 ${

@@ -18,9 +18,6 @@ const PopularMoviesCarousel = ({ movies }: PopularMoviesCarouselProps) => {
                 data={movies}
                 scrollAnimationDuration={800}
                 mode="parallax"
-                // panGestureHandlerProps={{
-                //     activeOffsetX: [-10, 10],  // prevents accidental scroll
-                // }}
                 style={{ alignSelf: 'center' }}
                 renderItem={({ item }) => (
                     <View style={{ marginHorizontal: 8 }}>

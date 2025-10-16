@@ -46,7 +46,7 @@ export const createCollection = async (
 export const deleteCollection = async (collectionId: string) => {
     await databases.deleteDocument(
         DATABASE_ID,
-        COLLECTIONS_COLLECTION_ID, // the collection table ID
+        COLLECTIONS_COLLECTION_ID,
         collectionId
     );
     return true;

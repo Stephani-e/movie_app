@@ -91,7 +91,7 @@ export const markAllNotificationsRead = async (userId: string) => {
             databases.updateDocument(
                 DATABASE_ID,
                 NOTIFICATIONS_COLLECTION_ID,
-                doc.$id, // ✅ always use $id, not userId
+                doc.$id, // always use $id, not userId
                 { read: true }
             )
         );

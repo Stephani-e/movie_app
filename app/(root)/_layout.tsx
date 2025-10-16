@@ -13,11 +13,11 @@ export default function AppLayout() {
         );
     }
 
-    // 🔐 Not logged in → send to sign-in
+    // Not logged in → send to sign-in
     if (!isLogged) {
         return <Redirect href="/sign-in" />;
     }
 
-    // ✅ Logged in → load rest of routes (tabs, movies, etc.)
+    // Logged in → load rest of routes (tabs, movies, etc.)
     return <Slot />;
 }

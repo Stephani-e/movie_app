@@ -29,7 +29,7 @@ const UpcomingCard = ({ movie, onPress }: UpcomingMovieProps) => {
                 activeOpacity={0.8}
                 className="flex-row items-center bg-black/40 rounded-xl p-3 mb-3"
             >
-                {/* 📅 Release Date Box */}
+                {/* Release Date Box */}
                 <View className="w-20 items-center justify-center mr-3">
                     <Text className="text-base font-bold text-red-400">
                         {releaseDay}
@@ -39,7 +39,7 @@ const UpcomingCard = ({ movie, onPress }: UpcomingMovieProps) => {
                     </Text>
                 </View>
 
-                {/* 🎬 Poster + Info */}
+                {/* Poster + Info */}
                 <Image
                     source={{ uri: `https://image.tmdb.org/t/p/w200${movie.poster_path}` }}
                     className="w-16 h-24 rounded-lg"

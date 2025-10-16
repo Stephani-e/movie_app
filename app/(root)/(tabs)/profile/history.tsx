@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {ActivityIndicator, Alert, SectionList, Text, TouchableOpacity, View} from "react-native";
 import {useRouter} from "expo-router";
-import {clearHistory, deleteHistoryItem, getSearchHistory} from "@/services/history"; // your simplified history service
+import {clearHistory, deleteHistoryItem, getSearchHistory} from "@/services/history";
 import {useGlobalContext} from "@/lib/global-provider";
 import dayjs from "dayjs";
 import {Ionicons} from "@expo/vector-icons";

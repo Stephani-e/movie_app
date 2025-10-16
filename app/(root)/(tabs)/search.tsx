@@ -57,10 +57,10 @@ const Search = () => {
         console.log("Movie Selected:", movie.title);
 
         try {
-            // ✅ Update general search stats
+            // Update general search stats
             await updateSearchCount(searchQuery, movie);
             console.log("Movie Selected:", movie.title);
-            // ✅ Add to user history
+            // Add to user history
             await addHistoryEntry(user.$id, searchQuery, movie);
 
             notify(

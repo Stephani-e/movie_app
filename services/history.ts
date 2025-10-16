@@ -34,7 +34,7 @@ export const getSearchHistory = async (userId: string) => {
         Query.equal("userId", userId),
         Query.orderDesc("$createdAt"),
     ]);
-    return res.documents; // no need to type everything
+    return res.documents;
 };
 
 // Delete a history item

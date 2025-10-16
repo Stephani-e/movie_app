@@ -12,7 +12,6 @@ const SignIn = () => {
 
     const handleLogin = async () => {
         const user = await login();
-        //const user = await getCurrentUser();
         if (user) {
             Alert.alert("Login Successful", "You are now logged in");
             //console.log("Login successful!");

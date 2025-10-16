@@ -25,7 +25,6 @@ export const databases = new Databases(client);
 export async function login() {
     try {
         const redirectUri = Linking.createURL('/');
-        //const redirectUri = Linking.createURL('', { scheme: 'movies' }); // movies://
         console.log("👉 Redirect URI being used:", redirectUri);
 
         const response = await account.createOAuth2Token(
@@ -51,10 +50,10 @@ export async function login() {
         const session = await account.createSession(userId, secret);
 
         if (!session) throw new Error('Session failed');
-        // ✅ Fetch current user details
+        // Fetch current user details
         const currentUser = await account.get();
 
-        // ✅ Add avatar URL for convenience
+        // Add avatar URL for convenience
         const userAvatar = `${config.endpoint}/avatars/initials?name=${encodeURIComponent(currentUser.name)}`;
 
         const user = {
@@ -93,7 +92,7 @@ export async function getCurrentUser() {
             }
         }
     } catch (error: any) {
-        // 🧠 Only log clean info for debugging
+        // Only log clean info for debugging
         if (error?.message?.includes("missing scopes")) {
             console.log("⚠️ No user session found — guest mode");
         } else {

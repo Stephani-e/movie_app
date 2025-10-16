@@ -26,7 +26,7 @@ export const useAppwrite = <T, P extends Record<string, string | number>>({ fn, 
 
     const fetchData = useCallback(
         async (fetchParams: P, force = false) => {
-            // ✅ Check cache first
+            // Check cache first
             if (cacheKey && !force) {
                 const cached = appwriteCache.get(cacheKey);
                 if (cached && Date.now() - cached.timestamp < cacheTime) {
@@ -42,7 +42,7 @@ export const useAppwrite = <T, P extends Record<string, string | number>>({ fn, 
                 const result = await fn(fetchParams);
                 setData(result ?? null);
 
-                // ✅ Save to cache
+                // Save to cache
                 if (cacheKey) {
                     appwriteCache.set(cacheKey, {
                         data: result ?? null,

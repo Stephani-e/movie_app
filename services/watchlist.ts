@@ -33,7 +33,7 @@ export const addToWatchlist = async (userId: string, movie: any, notes: string =
             movieId: movie.id?.toString(),
             title: movie.title,
             posterPath: movie.poster_path
-                ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` // ✅ full URL
+                ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
                 : "",
             notes,
         },

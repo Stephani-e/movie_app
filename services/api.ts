@@ -7,7 +7,7 @@ export const TMDB_CONFIG = {
     }
 }
 
-// 🔍 Search / Discover
+// Search / Discover
 export const fetchMovies = async ({ query }: { query: string }) => {
     const endpoint = query
         ? `${TMDB_CONFIG.BASE_URL}/search/movie?query=${encodeURIComponent(query)}`
@@ -26,7 +26,7 @@ export const fetchMovies = async ({ query }: { query: string }) => {
     return data.results;
 }
 
-// 🎬 Now Playing
+// Now Playing
 export const fetchNowPlaying = async (): Promise<NowPlayingMovie> => {
     try {
         const response = await fetch(`${TMDB_CONFIG.BASE_URL}/movie/now_playing`, {
@@ -46,7 +46,7 @@ export const fetchNowPlaying = async (): Promise<NowPlayingMovie> => {
     }
 }
 
-// ⏳ Upcoming
+// Upcoming
 export const fetchUpcoming = async (): Promise<UpcomingMovie> => {
     try {
         const response = await fetch(`${TMDB_CONFIG.BASE_URL}/movie/upcoming`, {
@@ -59,7 +59,7 @@ export const fetchUpcoming = async (): Promise<UpcomingMovie> => {
         }
 
         const data = await response.json();
-        // 📅 Filter: allow movies from today OR the last 7 days OR future
+        // Filter: allow movies from today OR the last 7 days OR future
         const today = new Date();
         const oneWeekAgo = new Date();
         oneWeekAgo.setDate(today.getDate() - 7);
@@ -69,7 +69,7 @@ export const fetchUpcoming = async (): Promise<UpcomingMovie> => {
             return releaseDate >= oneWeekAgo;
         });
 
-        //console.log("🎬 Filtered Upcoming:", unreleasedMovies.length);
+        //console.log("Filtered Upcoming:", unreleasedMovies.length);
         return unreleasedMovies;
     } catch (err) {
         console.log(err);
@@ -77,7 +77,7 @@ export const fetchUpcoming = async (): Promise<UpcomingMovie> => {
     }
 }
 
-// ⭐ Top Rated
+// Top Rated
 export const fetchTopRated = async (): Promise<TopRatedMovie> => {
     try {
         const res = await fetch(`${TMDB_CONFIG.BASE_URL}/movie/top_rated`, {
@@ -97,7 +97,7 @@ export const fetchTopRated = async (): Promise<TopRatedMovie> => {
     }
 }
 
-// 🔥 Popular
+// Popular
 export const fetchPopular = async (): Promise<PopularMovie> => {
     try {
         const response = await fetch(`${TMDB_CONFIG.BASE_URL}/movie/popular`, {
@@ -117,7 +117,7 @@ export const fetchPopular = async (): Promise<PopularMovie> => {
     }
 }
 
-// 📄 Movie Details
+// Movie Details
 export const fetchMovieDetails = async (movieId: String): Promise<MovieDetails> => {
     try {
         const res = await fetch(`${TMDB_CONFIG.BASE_URL}/movie/${movieId}?api_key=${TMDB_CONFIG.API_KEY}`, {
@@ -137,7 +137,7 @@ export const fetchMovieDetails = async (movieId: String): Promise<MovieDetails> 
     }
 }
 
-// 🎥 Fetch videos (trailers, teasers, clips, etc.)
+// Fetch videos (trailers, teasers, clips, etc.)
 export const fetchMovieVideos = async (id: string | number) => {
     const res = await fetch(`${TMDB_CONFIG.BASE_URL}/movie/${id}/videos?api_key=${TMDB_CONFIG.API_KEY}`, {
         method: 'GET',
@@ -148,7 +148,7 @@ export const fetchMovieVideos = async (id: string | number) => {
     return data.results;
 };
 
-// 🌐 Fetch external links (IMDb, homepage, etc.)
+// Fetch external links (IMDb, homepage, etc.)
 export const fetchMovieExternalLinks = async (id: string | number) => {
     const res = await fetch(`${TMDB_CONFIG.BASE_URL}/movie/${id}?api_key=${TMDB_CONFIG.API_KEY}`, {
         method: 'GET',
@@ -163,7 +163,7 @@ export const fetchMovieExternalLinks = async (id: string | number) => {
 };
 
 
-// 👥 Movie Credits
+// Movie Credits
 export const fetchMovieCredits = async (movieId: string): Promise<MovieCredits> => {
     try {
         const res = await fetch(

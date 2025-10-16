@@ -123,7 +123,7 @@ const Index = () => {
                             className="w-12 h-10 mt-20 mb-5 mx-auto"
                         />
 
-                        {/* 🔍 Search */}
+                        {/* Search */}
                         <SearchBar
                             onPress={() => {
                                 router.push("/search");
@@ -131,7 +131,7 @@ const Index = () => {
                             placeholder="Search for a movie"
                         />
 
-                        {/* 🔥 Trending */}
+                        {/* Trending */}
                         {trendingMovies && (
                             <View className="mt-10">
                                 <Text className="text-lg text-white font-bold mb-3">
@@ -153,7 +153,7 @@ const Index = () => {
                             </View>
                         )}
 
-                        {/* ⏳ Upcoming */}
+                        {/* Upcoming */}
                         {upcomingMovies.length > 0 &&  (
                             <View className="mt-10">
                                 <Text className="text-lg text-white font-bold mb-3">
@@ -168,7 +168,7 @@ const Index = () => {
                             </View>
                         )}
 
-                        {/* 🎬 Now Playing */}
+                        {/* Now Playing */}
                         {nowPlayingMovies?.results && (
                             <View className="mt-10">
                                 <Text className="text-lg text-white font-bold mb-3">
@@ -184,7 +184,7 @@ const Index = () => {
                             </View>
                         )}
 
-                        {/* 🌍 Popular */}
+                        {/* Popular */}
                         {popularMovies?.results && (
                             <View className="mt-10">
                                 <Text className="text-lg text-white font-bold mb-3">
@@ -199,7 +199,7 @@ const Index = () => {
                             </View>
                         )}
 
-                        {/* ⭐ Top Rated */}
+                        {/* Top Rated */}
                         {topRatedMovies?.results && (
                             <TopRatedSection
                                 topRatedMovies={{
