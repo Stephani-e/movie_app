@@ -95,19 +95,54 @@ npx expo start
 --- 
 
 ## <a name="screenshots">🖼️ Screenshots</a>
-- Home Screen
-- Search Results
-- Movie Details
-- Collections & Favorites
-- User Profile
+- Auth:
+ ![FirstPage.jpg](assets/Preview%20Images/Auth/FirstPage.jpg) 
+ ![GoogleAuth.jpg](assets/Preview%20Images/Auth/GoogleAuth.jpg) 
+ ![Login.jpg](assets/Preview%20Images/Auth/Login.jpg) 
+ ![LogOutConfirmation.jpg](assets/Preview%20Images/Auth/LogOutConfirmation.jpg) 
+ ![LogOut.jpg](assets/Preview%20Images/Auth/LogOut.jpg) 
 
-## COMING SOON
+- Home Screen:
+ ![Home-0.jpg](assets/Preview%20Images/Home/Home-0.jpg) 
+ ![Home-1.jpg](assets/Preview%20Images/Home/Home-1.jpg) 
+ ![Home-2.jpg](assets/Preview%20Images/Home/Home-2.jpg) 
+ ![Home-3.jpg](assets/Preview%20Images/Home/Home-3.jpg)
+
+- Search Results:
+ ![Search-0.jpg](assets/Preview%20Images/Search/Search-0.jpg) 
+ ![Search-1.jpg](assets/Preview%20Images/Search/Search-1.jpg) 
+ ![Search-2.jpg](assets/Preview%20Images/Search/Search-2.jpg)
+
+- Movie Details:
+ ![MovieDetails-0.jpg](assets/Preview%20Images/MovieDetails/MovieDetails-0.jpg) 
+ ![MovieDetails-1.jpg](assets/Preview%20Images/MovieDetails/MovieDetails-1.jpg) 
+ ![MovieDetails-2.jpg](assets/Preview%20Images/MovieDetails/MovieDetails-2.jpg) 
+ ![MovieDetails-3.jpg](assets/Preview%20Images/MovieDetails/MovieDetails-3.jpg) 
+ ![MovieDetails-4.jpg](assets/Preview%20Images/MovieDetails/MovieDetails-4.jpg)
+ ![MovieDetails-5.jpg](assets/Preview%20Images/MovieDetails/MovieDetails-5.jpg) 
+ ![MovieDetails-6.jpg](assets/Preview%20Images/MovieDetails/MovieDetails-6.jpg)
+
+- Collections:
+ ![Collection-0.jpg](assets/Preview%20Images/MovieDetails/Collection-0.jpg) 
+ ![Collection-1.jpg](assets/Preview%20Images/MovieDetails/Collection-1.jpg) 
+ ![Collection-2.jpg](assets/Preview%20Images/MovieDetails/Collection-2.jpg)
+
+- User Profile:'
+ ![ProfilePage.jpg](assets/Preview%20Images/Profile/ProfilePage.jpg) 
+ ![Favorites.jpg](assets/Preview%20Images/Profile/Favorites.jpg)
+ ![Watchlist-0.jpg](assets/Preview%20Images/Profile/Watchlist-0.jpg)
+ ![WatchList-1.jpg](assets/Preview%20Images/Profile/WatchList-1.jpg)
+ ![WatchList-2.jpg](assets/Preview%20Images/Profile/WatchList-2.jpg)
+ ![SearchHistory.jpg](assets/Preview%20Images/Profile/SearchHistory.jpg)
+ ![EditProfile.jpg](assets/Preview%20Images/Profile/EditProfile.jpg) 
+ ![Notifications.jpg](assets/Preview%20Images/Profile/Notifications.jpg) 
+ ![Edit Settings.jpg](assets/Preview%20Images/Profile/Edit%20Settings.jpg)
 
 ---
 
 ## <a name="demo-link">🌍 Demo Link</a>
-🔗 Live Demo: Coming Soon
-
+ [Demo.mp4](assets/Preview%20Videos/Demo.mp4)
+ [Play.mp4](assets/Preview%20Videos/Play.mp4)
 ---
 
 ## <a name="contributing">🤝 Contributing</a>

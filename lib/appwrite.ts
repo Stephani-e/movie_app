@@ -26,7 +26,7 @@ export const databases = new Databases(client);
 export async function login() {
     try {
         const redirectUri = AuthSession.makeRedirectUri({scheme: "movies"});
-        console.log("👉 Redirect URI being used:", redirectUri);
+        //console.log("👉 Redirect URI being used:", redirectUri);
 
         const response = await account.createOAuth2Token(
             OAuthProvider.Google,

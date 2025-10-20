@@ -99,8 +99,8 @@ const NotificationPage = () => {
     };
 
     return (
-        <View className="flex-1 bg-primary px-5 pt-20">
-            <View className="flex-row justify-between items-center mb-4 mt-10">
+        <View className="flex-1 bg-primary px-5 pt-12">
+            <View className="flex-row justify-between items-center mb-4 mt-24">
                 <TouchableOpacity onPress={handleMarkAll}>
                     <Text className="text-blue-400 text-sm">Mark all as read</Text>
                 </TouchableOpacity>

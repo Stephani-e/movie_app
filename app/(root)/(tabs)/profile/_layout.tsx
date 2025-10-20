@@ -1,19 +1,19 @@
-import {Stack} from "expo-router";
-import {Text} from "react-native";
-import {Ionicons} from "@expo/vector-icons";
+import { Stack } from "expo-router";
+import { Text, View, Platform } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 
 export default function ProfileLayout() {
     return (
         <Stack
             screenOptions={{
-                headerShown: false, // hide default headers by default
+                headerShown: false,
                 contentStyle: {
-                    backgroundColor: "#0F0D23", // fallback background
+                    backgroundColor: "#0F0D23",
                 },
             }}
         >
-            {/* Profile main page (shows tab bar like others) */}
+            {/* Profile main page (part of Tabs layout, no extra padding) */}
             <Stack.Screen
                 name="index"
                 options={{
@@ -21,107 +21,48 @@ export default function ProfileLayout() {
                 }}
             />
 
-            {/* Edit Profile page (push navigation, back button, no tab bar) */}
-            <Stack.Screen
-                name="edit"
-                options={{
-                    headerShown: true,
-                    headerTransparent: true,
-                    headerTitle: "",
-                    headerRight: () => (
-                        <Text style={{ color: "#fff", fontSize:18, fontWeight:"700" }}>
-                            <Ionicons name="person-add" size={16} color="white" /> Edit Profile
-                        </Text>
-                    ),
-                    headerTintColor: "#fff", // back button color
-
-                }}
-            />
-
-            {/* Settings */}
-            <Stack.Screen
-                name="settings"
-                options={{
-                    headerShown: true,
-                    headerTransparent: true,
-                    headerTitle: "",
-                    headerRight: () => (
-                        <Text style={{ color: "#fff", fontSize:18, fontWeight:"700" }}>
-                            <Ionicons name="settings" size={16} color="white" /> Edit Settings
-                        </Text>
-                    ),
-                    headerTintColor: "#fff", // back button color
-
-                }}
-            />
-
-            {/* Favorites */}
-            <Stack.Screen
-                name="favorites"
-                options={{
-                    headerShown: true,
-                    headerTransparent: true,
-                    headerTitle: "",
-                    headerRight: () => (
-                        <Text style={{ color: "#fff", fontSize:18, fontWeight:"700" }}>
-                            <Ionicons name="heart-circle-sharp" size={16} color="white" /> Your Favorites
-                        </Text>
-                    ),
-                    headerTintColor: "#fff", // back button color
-
-                }}
-            />
-
-            {/* Watchlist */}
-            <Stack.Screen
-                name="watchlist"
-                options={{
-                    headerShown: true,
-                    headerTransparent: true,
-                    headerTitle: "",
-                    headerRight: () => (
-                        <Text style={{ color: "#fff", fontSize:18, fontWeight:"700" }}>
-                            <Ionicons name="list-circle" size={16} color="white" /> Create Your Watchlist
-                        </Text>
-                    ),
-                    headerTintColor: "#fff", // back button color
-
-                }}
-            />
-
-            {/* History */}
-            <Stack.Screen
-                name="history"
-                options={{
-                    headerShown: true,
-                    headerTransparent: true,
-                    headerTitle: "",
-                    headerRight: () => (
-                        <Text style={{ color: "#fff", fontSize:18, fontWeight:"700" }}>
-                            <Ionicons name="time-outline" size={16} color="white" /> Your Search History
-                        </Text>
-                    ),
-                    headerTintColor: "#fff", // back button color
-
-                }}
-            />
-
-            {/* Notification */}
-            <Stack.Screen
-                name="notifications"
-                options={{
-                    headerShown: true,
-                    headerTransparent: true,
-                    headerTitle: "",
-                    headerRight: () => (
-                        <Text style={{ color: "#fff", fontSize:18, fontWeight:"700" }}>
-                            <Ionicons name="notifications-circle"  size={16} color="white" /> Your Notifications
-                        </Text>
-                    ),
-                    headerTintColor: "#fff", // back button color
-
-                }}
-            />
+            {/* All other pages */}
+            {[
+                ["edit", "person-add", "Edit Profile"],
+                ["settings", "settings", "Edit Settings"],
+                ["favorites", "heart-circle-sharp", "Your Favorites"],
+                ["watchlist", "list-circle", "Create Your Watchlist"],
+                ["history", "time-outline", "Your Search History"],
+                ["notifications", "notifications-circle", "Your Notifications"],
+            ].map(([name, icon, label]) => (
+                <Stack.Screen
+                    key={name}
+                    name={name as string}
+                    options={{
+                        headerShown: true,
+                        headerTransparent: true,
+                        headerTitle: "",
+                        headerRight: () => (
+                            <View
+                                style={{
+                                    flexDirection: "row",
+                                    alignItems: "center",
+                                    marginRight: 10,
+                                    marginTop: Platform.OS === "ios" ? 2 : 0, // light adjustment for iOS
+                                }}
+                            >
+                                <Ionicons name={icon as any} size={18} color="white" />
+                                <Text
+                                    style={{
+                                        color: "#fff",
+                                        fontSize: 18,
+                                        fontWeight: "700",
+                                        marginLeft: 5,
+                                    }}
+                                >
+                                    {label}
+                                </Text>
+                            </View>
+                        ),
+                        headerTintColor: "#fff",
+                    }}
+                />
+            ))}
         </Stack>
     );
 }

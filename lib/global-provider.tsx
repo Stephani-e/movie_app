@@ -44,9 +44,9 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
         }))
     }
 
-    useEffect(() => {
-        console.log("🔎 GlobalProvider user:", JSON.stringify(user, null, 2));
-    }, [user]);
+    // useEffect(() => {
+    //     console.log("🔎 GlobalProvider user:", JSON.stringify(user, null, 2));
+    // }, [user]);
 
     if (loading) {
         return (

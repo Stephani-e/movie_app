@@ -1,17 +1,18 @@
 import {useState} from "react";
-import {Text, TouchableOpacity, View} from "react-native";
+import {LayoutAnimation, Platform, Text, TouchableOpacity, UIManager, View} from "react-native";
 import TopRatedCard from "@/components/TopRatedCard";
+
+if (Platform.OS === "android" && UIManager.setLayoutAnimationEnabledExperimental) {
+    UIManager.setLayoutAnimationEnabledExperimental(true);
+}
 
 const TopRatedSection = ({ topRatedMovies }: { topRatedMovies: MovieApiResponse }) => {
     const [visibleCount, setVisibleCount] = useState(10); // Show first 10 initially
     const isExpanded = visibleCount >= topRatedMovies.results.length;
 
     const toggleSeeMore = () => {
-        if (isExpanded) {
-            setVisibleCount(10); // collapse back
-        } else {
-            setVisibleCount(topRatedMovies.results.length); // expand to all
-        }
+        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+        setVisibleCount(isExpanded ? 10 : topRatedMovies.results.length);
     };
 
     return (
