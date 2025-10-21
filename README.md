@@ -95,55 +95,17 @@ npx expo start
 --- 
 
 ## <a name="screenshots">🖼️ Screenshots</a>
-- Auth:
- ![FirstPage.jpg](assets/Preview%20Images/Auth/FirstPage.jpg) 
- ![GoogleAuth.jpg](assets/Preview%20Images/Auth/GoogleAuth.jpg) 
- ![Login.jpg](assets/Preview%20Images/Auth/Login.jpg) 
- ![LogOutConfirmation.jpg](assets/Preview%20Images/Auth/LogOutConfirmation.jpg) 
- ![LogOut.jpg](assets/Preview%20Images/Auth/LogOut.jpg) 
+- ![Auth] (https://drive.google.com/drive/folders/1G-Kusf-4vq2Gxnn-JzycaYvitRCQcydx?usp=drive_link)
+- ![Home Screen] (https://drive.google.com/drive/folders/1LJF8LV1Rbi_14g3_n0WImp_bjM1b3Tcq?usp=drive_link)
+- ![Search Results] (https://drive.google.com/drive/folders/1t4mWRsdpsOG7eo3C78IYmkWYN-h3B1v8?usp=drive_link)
+- ![Movie Details] (https://drive.google.com/drive/folders/1wX812JQKVsynttbB8H_eGfotHZ1eZRyG?usp=drive_link)
+- ![User Profile] (https://drive.google.com/drive/folders/1OdnUDex9zZVAyRHCLjvxxgF_IgL7O_gt?usp=drive_link)
 
-- Home Screen:
- ![Home-0.jpg](assets/Preview%20Images/Home/Home-0.jpg) 
- ![Home-1.jpg](assets/Preview%20Images/Home/Home-1.jpg) 
- ![Home-2.jpg](assets/Preview%20Images/Home/Home-2.jpg) 
- ![Home-3.jpg](assets/Preview%20Images/Home/Home-3.jpg)
-
-- Search Results:
- ![Search-0.jpg](assets/Preview%20Images/Search/Search-0.jpg) 
- ![Search-1.jpg](assets/Preview%20Images/Search/Search-1.jpg) 
- ![Search-2.jpg](assets/Preview%20Images/Search/Search-2.jpg)
-
-- Movie Details:
- ![MovieDetails-0.jpg](assets/Preview%20Images/MovieDetails/MovieDetails-0.jpg) 
- ![MovieDetails-1.jpg](assets/Preview%20Images/MovieDetails/MovieDetails-1.jpg) 
- ![MovieDetails-2.jpg](assets/Preview%20Images/MovieDetails/MovieDetails-2.jpg) 
- ![MovieDetails-3.jpg](assets/Preview%20Images/MovieDetails/MovieDetails-3.jpg) 
- ![MovieDetails-4.jpg](assets/Preview%20Images/MovieDetails/MovieDetails-4.jpg)
- ![MovieDetails-5.jpg](assets/Preview%20Images/MovieDetails/MovieDetails-5.jpg) 
- ![MovieDetails-6.jpg](assets/Preview%20Images/MovieDetails/MovieDetails-6.jpg)
-
-- Collections:
- ![Collection-0.jpg](assets/Preview%20Images/MovieDetails/Collection-0.jpg) 
- ![Collection-1.jpg](assets/Preview%20Images/MovieDetails/Collection-1.jpg) 
- ![Collection-2.jpg](assets/Preview%20Images/MovieDetails/Collection-2.jpg)
-
-- User Profile:'
- ![ProfilePage.jpg](assets/Preview%20Images/Profile/ProfilePage.jpg) 
- ![Favorites.jpg](assets/Preview%20Images/Profile/Favorites.jpg)
- ![Watchlist-0.jpg](assets/Preview%20Images/Profile/Watchlist-0.jpg)
- ![WatchList-1.jpg](assets/Preview%20Images/Profile/WatchList-1.jpg)
- ![WatchList-2.jpg](assets/Preview%20Images/Profile/WatchList-2.jpg)
- ![SearchHistory.jpg](assets/Preview%20Images/Profile/SearchHistory.jpg)
- ![EditProfile.jpg](assets/Preview%20Images/Profile/EditProfile.jpg) 
- ![Notifications.jpg](assets/Preview%20Images/Profile/Notifications.jpg) 
- ![Edit Settings.jpg](assets/Preview%20Images/Profile/Edit%20Settings.jpg)
-
+- https://drive.google.com/drive/folders/10s1NhsAhBJwmpYSqn-DikkL_JV6SJIHz?usp=drive_link
 ---
 
 ## <a name="demo-link">🌍 Demo Link</a>
- [Demo.mp4](assets/Preview%20Videos/Demo.mp4)
- [Play.mp4](assets/Preview%20Videos/Play.mp4)
----
+- https://drive.google.com/drive/folders/17z3g1lDNyz5pr_UQAevW5ssOC1-s4SD-?usp=drive_link
 
 ## <a name="contributing">🤝 Contributing</a>
 Contributions are welcome!
