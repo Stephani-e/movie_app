@@ -9,7 +9,7 @@
     <img src="https://img.shields.io/badge/-Appwrite-black?style=for-the-badge&logo=appwrite&logoColor=white&color=F02E65" alt="Appwrite" />
   </div>
 
-<h2 align="center">🎬 Mobile Movie App</h2>
+<h2 align="center"> Mobile Movie App</h2>
 <h4 align="center">A modern movie discovery app built with Expo, React Native, and Appwrite</h4>
 </div>
 
@@ -36,7 +36,7 @@ It’s powered by a **custom popularity algorithm** that ranks movies based on u
 Authentication is handled through **Google OAuth2**, offering a seamless and secure login flow. With features like favorites, collections, watchlist, and live notifications, this app demonstrates both strong UI/UX principles and production-ready scalability.
 
 ---
-## <a name="tech-stack">⚙️ Tech Stack</a>
+## <a name="tech-stack"> Tech Stack</a>
 
 - **[Expo](https://expo.dev/)** – The all-in-one platform for developing and deploying cross-platform React Native apps, featuring fast refresh, OTA updates, and file-based routing via Expo Router.
 
