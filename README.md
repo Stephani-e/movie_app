@@ -14,17 +14,17 @@
 </div>
 
 ---
- ## 📋Table of Contents
-1. 🤖 [Introduction](#introduction)
-2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
-4. 🚀 [Installation & Setup](#installation-&-setup)
-5. 🖼️ [Screenshots](#screenshots)
-6. 🌍 [Demo Link](#demo-link)
-7. 🤝 [Contributing](#contributing)
+ ## Table of Contents
+1. [Introduction](#introduction)
+2. [Tech Stack](#tech-stack)
+3. [Features](#features)
+4. [Installation & Setup](#installation-&-setup)
+5. [Screenshots](#screenshots)
+6. [Demo Link](#demo-link)
+7. [Contributing](#contributing)
 
 ---
-## <a name="introduction">🤖 Introduction</a>
+## <a name="introduction"> Introduction</a>
 
 **Mobile Movie App** is a fully functional, cross-platform movie discovery app built with **Expo**, **React Native**, and **TypeScript**.  
 It integrates **Appwrite** for secure authentication, user data management, and real-time database operations.
@@ -50,27 +50,27 @@ Authentication is handled through **Google OAuth2**, offering a seamless and sec
 
 ---
 
-## <a name="feautures">🔋 Features</a>
-### 🌟 Core Features
-- 🎥 **Dynamic Movie Feed** – Fetches and displays real-time movie data.
-- 🔍 **Search Functionality** – Instantly search and discover movies by name or keyword.
-- 🏆 **Popularity Algorithm** – Tracks user engagement to showcase trending titles.
-- ❤️ **Favorites & Collections** – Create personal collections and favorite lists.
-- ⏰ **Watchlist Management** – Save movies to watch later.
-- 🕒 **User History Tracking** – Keeps a record of recently viewed movies.
-- 🔔 **Live Notifications** – Real-time updates powered by Appwrite.
-- 🔐 **Google OAuth2 Authentication** – Simple, secure sign-in with Google.
-- 📱 **Responsive UI** – Built with modern design principles for all devices.
+## <a name="feautures"> Features</a>
+### Core Features
+- **Dynamic Movie Feed** – Fetches and displays real-time movie data.
+- **Search Functionality** – Instantly search and discover movies by name or keyword.
+- **Popularity Algorithm** – Tracks user engagement to showcase trending titles.
+- **Favorites & Collections** – Create personal collections and favorite lists.
+- **Watchlist Management** – Save movies to watch later.
+- **User History Tracking** – Keeps a record of recently viewed movies.
+- **Live Notifications** – Real-time updates powered by Appwrite.
+- **Google OAuth2 Authentication** – Simple, secure sign-in with Google.
+- **Responsive UI** – Built with modern design principles for all devices.
 
-### 🧩 Additional Highlights
-- 🧱 Clean Architecture – Modular file structure for scalability.
-- ♻️ Reusable Components – Shared UI patterns and hooks.
-- 🧰 Appwrite Integration – Real-world backend-as-a-service setup.
-- ⚡ Optimized Performance – Designed with speed and efficiency in mind.
+### Additional Highlights
+- Clean Architecture – Modular file structure for scalability.
+- Reusable Components – Shared UI patterns and hooks.
+- Appwrite Integration – Real-world backend-as-a-service setup.
+- Optimized Performance – Designed with speed and efficiency in mind.
 
 ---
 
-## <a name="installation-&-setup">🚀 Installation & Setup</a>
+## <a name="installation-&-setup"> Installation & Setup</a>
 - Prerequisites:
   Make sure you have the following installed on your machine:
 
@@ -79,22 +79,22 @@ Authentication is handled through **Google OAuth2**, offering a seamless and sec
 - **[npm](https://www.npmjs.com/)** _(Node Package Manager)_
 - Appwrite account and project configured
 
-### 🚀 Getting Started
+### Getting Started
 ```bash
-# 1️⃣ Clone the repository
+# Clone the repository
 git clone https://github.com/Stephani-e/movie_app.git
 
-# 2️⃣ Install dependencies
+# Install dependencies
 npm install
 
-# 3️⃣ Run the project locally
+# Run the project locally
 npx expo start
 ```
 - Then scan the QR code using the Expo Go app or run it on your simulator.
 
 --- 
 
-## <a name="screenshots">🖼️ Screenshots</a>
+## <a name="screenshots"> Screenshots</a>
 - ![Auth] (https://drive.google.com/drive/folders/1G-Kusf-4vq2Gxnn-JzycaYvitRCQcydx?usp=drive_link)
 - ![Home Screen] (https://drive.google.com/drive/folders/1LJF8LV1Rbi_14g3_n0WImp_bjM1b3Tcq?usp=drive_link)
 - ![Search Results] (https://drive.google.com/drive/folders/1t4mWRsdpsOG7eo3C78IYmkWYN-h3B1v8?usp=drive_link)
@@ -104,10 +104,10 @@ npx expo start
 - https://drive.google.com/drive/folders/10s1NhsAhBJwmpYSqn-DikkL_JV6SJIHz?usp=drive_link
 ---
 
-## <a name="demo-link">🌍 Demo Link</a>
+## <a name="demo-link"> Demo Link</a>
 - https://drive.google.com/drive/folders/17z3g1lDNyz5pr_UQAevW5ssOC1-s4SD-?usp=drive_link
 
-## <a name="contributing">🤝 Contributing</a>
+## <a name="contributing"> Contributing</a>
 Contributions are welcome!
 Fork this repository, make your improvements, and open a pull request.
 
